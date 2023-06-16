@@ -1,0 +1,65 @@
+<%- include('partials/header.ejs') %>
+ 
+ <%- include('partials/main_nav.ejs') %>
+ 
+<!--Main content-->
+<main class="container">
+    <div class="jumbotron">
+      <h1 class="display-4"> Welcome to the <%= title %> page</h1>
+      
+   
+      </div>
+      <div>
+        <b>Contact Me</b>
+      </div>
+<div>
+    <!--Interactive form-->
+    <form>
+        <div class="row">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="First name">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Last name">
+          </div>
+
+           <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Email</label>
+              <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputcontact">Contact</label>
+              <input type="contact" class="form-control" id="contact" placeholder="Contact Number">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <input type="text" class="form-control" id="message" placeholder="Message"><br>
+          </div>
+         
+          <div>
+          
+          <button type="submit" formaction="/" class="btn btn-primary">Submit</button>
+
+        </div>
+    </form>
+
+   <!--Address -->
+    <div style="line-height:10px">
+    <p style = "text-align:center;">207-1 Churchill Dr</p>
+    <p style = "text-align:center;">Sydney, NS</p>
+    <p style = "text-align:center;">B1S 0L6</p>
+    <p style = "text-align:center;">Email: shinumolseb@gmail.com</p>
+</div>
+
+<!--Google Map-->
+        <div style = "text-align:center;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2765.3250993572965!2d-60.204144924275674!3d46.12435368915164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4b67fb420971c4dd%3A0x9433bb5193dee5a4!2s1%20Churchill%20Dr%2C%20Sydney%2C%20NS%20B1S%200L6!5e0!3m2!1sen!2sca!4v1685614565333!5m2!1sen!2sca" width="300" height="250" style="border:0;" allowfullscreen="30" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    
+</main>
+
+ <%- include('partials/bottom_nav.ejs') %>
+
+ <%- include('partials/footer.ejs') %>
