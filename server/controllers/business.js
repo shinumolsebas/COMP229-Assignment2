@@ -13,7 +13,11 @@ module.exports.displayBusinessList = async(req,res,next)=>{
     try{
         let businessList = await Business.find();
        // console.log(businessList);
-        res.render('business/list', {title: 'Business', BusinessList: businessList});
+        res.render('business/list', 
+        {
+        title: 'Business', 
+        BusinessList: businessList,
+        displayName: req.user ? req.user.displayName : '' })
     } 
     catch(err){
         console.log(err);
@@ -24,7 +28,10 @@ module.exports.displayEditPage =async(req,res,next)=>{
 
     try{
         let businessToEdit = await Business.findById(id);
-        res.render('business/edit',{title:'Edit Business', business:businessToEdit});
+        res.render('business/edit',{
+            title:'Edit Business', 
+            business:businessToEdit ,
+            displayName: req.user ? req.user.displayName : ''});
     } catch(err){
         console.log(err);
         res.status(500).send(err);

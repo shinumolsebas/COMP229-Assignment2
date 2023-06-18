@@ -8,19 +8,19 @@ let userModel = require('../models/user');
 let User = userModel.User; //alias
 
 module.exports.displayHomePage=(req,res,next)=>{
-    res.render('index', { title: 'Home' });   
+    res.render('index', { title: 'Home' , displayName: req.user ? req.user.displayName:''});   
 }
 module.exports.displayAboutPage=(req,res,next)=>{
-    res.render('about', { title: 'About Me'});   
+    res.render('about', { title: 'About Me' , displayName: req.user ? req.user.displayName:'' });   
 }
 module.exports.displayProjectsPage=(req,res,next)=>{
-    res.render('projects', { title: 'Projects' }); 
+    res.render('projects', { title: 'Projects' , displayName: req.user ? req.user.displayName:'' }); 
 }
 module.exports.displayServicesPage=(req,res,next)=>{
-    res.render('services', { title: 'Services'  });
+    res.render('services', { title: 'Services' , displayName: req.user ? req.user.displayName:'' });
 }
 module.exports.displayContactPage=(req,res,next)=>{
-    res.render('contact', { title: 'Contact Me' });
+    res.render('contact', { title: 'Contact Me' , displayName: req.user ? req.user.displayName:'' });
 }
 
 
@@ -133,7 +133,7 @@ module.exports.displayRegisterPage = (req,res,next) => {
         //if registration is success
         return passport.authenticate('local')(req,res,() => {
 
-        req.redirect('/business-list')
+        res.redirect('/business-list')
         });
         
     }
